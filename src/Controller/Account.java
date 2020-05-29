@@ -32,6 +32,13 @@ public class Account {
         return players;
     }
 
+    public void startNewGame(String secondPlayerName, int numOfTurns) throws Exception {
+        if(!Player.getAllPlayers().containsKey(secondPlayerName)) {
+            throw new Exception("No player exist with this username.");
+        }
+        Game.getInstance().startGame(player, Player.getPlayerByName(secondPlayerName), numOfTurns);
+    }
+
     public void logout() {
         player = null;
     }
