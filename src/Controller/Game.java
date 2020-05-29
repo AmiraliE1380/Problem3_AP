@@ -14,6 +14,8 @@ public class Game {
     private Piece.Color movingPlayer;
     private Memory memory;
     private Piece selectedPiece;
+    private Piece killedPiece;
+    private boolean hasMoved;
 
     private Game(){}
 
@@ -28,6 +30,7 @@ public class Game {
         movingPlayer = Piece.Color.WHITE;
         initializePieces();
         memory = new Memory();
+        hasMoved = false;
     }
 
     private int getLimit(int turns) {
@@ -80,6 +83,29 @@ public class Game {
             throw new Exception("There is no piece in the coordination.");
         if(!Piece.getAlivePiece(x, y).getColor().equals(movingPlayer))
             throw new Exception("You must choose one of your one pieces.");
+        selectedPiece = Piece.getAlivePiece(x, y);
+    }
+
+    public void deselect() {
+        selectedPiece = null;
+    }
+
+    public void move(int x, int y) throws Exception {
+        if(!selectedPiece.canPieceMakeSuchMove(x, y) || selectedPiece.isObstacleInWay(x, y))
+            throw new Exception("Piece can not make such move!");
+        if(Piece.isInCoordinationAnAlivePiece(x, y)) {
+            Piece piece = Piece.getAlivePiece(x, y);
+            if (piece.getColor().equals(movingPlayer))
+                throw new Exception("You can't kill one of your own pieces!");
+            piece.setDead(true);
+            killedPiece = piece;
+        }
+        selectedPiece.setX(x);
+        selectedPiece.setY(y);
+        selectedPiece = null;
+    }
+
+    public void nextTurn() {
 
     }
 }
