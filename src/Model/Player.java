@@ -46,23 +46,23 @@ public class Player {
         return password;
     }
 
-    public int getNumOfWins() {
+    public Integer getNumOfWins() {
         return numOfWins;
     }
 
-    public int getNumOfRivalForfeits() {
+    public Integer getNumOfRivalForfeits() {
         return numOfRivalForfeits;
     }
 
-    public int getNumOfOwnForfeits() {
+    public Integer getNumOfOwnForfeits() {
         return numOfOwnForfeits;
     }
 
-    public int getNumOfDraws() {
+    public Integer getNumOfDraws() {
         return numOfDraws;
     }
 
-    public int getNumOfLooses() {
+    public Integer getNumOfLooses() {
         return numOfLooses;
     }
 
@@ -98,7 +98,7 @@ public class Player {
         this.login = login;
     }
 
-    public int calculateScore() {
+    public Integer calculateScore() {
         return 3 * numOfWins + numOfDraws + 2 * numOfRivalForfeits - numOfOwnForfeits;
     }
 }
