@@ -1,8 +1,8 @@
 package Model.Pieces;
 
 public class Rook extends Piece {
-    public Rook(Color color, Type type, int x, int y) {
-        super(color, type, x, y);
+    public Rook(Color color, int x, int y) {
+        super(color, Type.ROOK, x, y);
     }
 
     @Override
