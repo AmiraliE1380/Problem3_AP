@@ -21,10 +21,6 @@ public abstract class Piece {
         this.isDead = false;
     }
 
-    public static void setAlivePieces(ArrayList<Piece> alivePieces) {
-        Piece.alivePieces = alivePieces;
-    }
-
     public static boolean isInCoordinationAnAlivePiece(int x, int y) {
         for(Piece piece: alivePieces) {
             if(piece.getX() == x && piece.getY() == y) {
@@ -57,6 +53,10 @@ public abstract class Piece {
 
     public int getY() {
         return y;
+    }
+
+    public static ArrayList<Piece> getAlivePieces() {
+        return alivePieces;
     }
 
     public boolean isDead() {

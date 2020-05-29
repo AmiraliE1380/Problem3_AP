@@ -12,7 +12,6 @@ public class Game {
     private int turns;
     private ArrayList<Piece> pieces;
     private Piece.Color movingPlayer;
-    private Memory memory;
     private Piece selectedPiece;
     private Piece killedPiece;
     private boolean hasMoved;
@@ -29,7 +28,6 @@ public class Game {
         this.turns = getLimit(turns);
         movingPlayer = Piece.Color.WHITE;
         initializePieces();
-        memory = new Memory();
         hasMoved = false;
     }
 
@@ -75,7 +73,6 @@ public class Game {
         player2 = null;
         turns = 0;
         pieces = null;
-        memory = null;
     }
 
     public void select(int x, int y) throws Exception {
@@ -99,13 +96,71 @@ public class Game {
                 throw new Exception("You can't kill one of your own pieces!");
             piece.setDead(true);
             killedPiece = piece;
+        } else {
+            killedPiece = null;
         }
         selectedPiece.setX(x);
         selectedPiece.setY(y);
+        hasMoved = true;
+    }
+
+    public void nextTurn() throws Exception {
+        if(!hasMoved)
+            throw new Exception("You must make a move every turn.");
+        if(movingPlayer.equals(Piece.Color.BLACK))
+            movingPlayer = Piece.Color.WHITE;
+        else
+            movingPlayer = Piece.Color.BLACK;
+        killedPiece.setDead(true);
+        resetAlivePieces(killedPiece);
+        killedPiece = null;
         selectedPiece = null;
+        selectedPiece = null;
+        turns--;
+        hasMoved = false;
     }
 
-    public void nextTurn() {
-
+    private void resetAlivePieces(Piece killedPiece) {
+        Piece.getAlivePieces().remove(killedPiece);
     }
+
+    public void forfeit() {
+        if(movingPlayer.equals(Piece.Color.BLACK)) {
+            player2.setNumOfOwnForfeits(player2.getNumOfOwnForfeits() + 1);
+            player1.setNumOfRivalForfeits(player1.getNumOfRivalForfeits() + 1);
+        } else {
+            player1.setNumOfOwnForfeits(player1.getNumOfOwnForfeits() + 1);
+            player2.setNumOfRivalForfeits(player2.getNumOfRivalForfeits() + 1);
+        }
+        endGame();
+    }
+
+    public boolean hasGameEnded() {
+        for(Piece piece: pieces) {
+            if(piece.getType().equals(Piece.Type.KNIGHT)){
+                if(piece.isDead()) {
+                    setResult(piece.getColor());
+                    return true;
+                }
+            }
+        }
+        if(turns == 0) {
+            player1.setNumOfDraws(1 + player1.getNumOfDraws());
+            player2.setNumOfDraws(1 + player2.getNumOfDraws());
+            return true;
+        }
+        return false;
+    }
+
+    private void setResult(Piece.Color looserColor) {
+        if(looserColor.equals(Piece.Color.BLACK)) {
+            player1.setNumOfWins(player1.getNumOfWins() + 1);
+            player2.setNumOfLooses(player2.getNumOfLooses() + 1);
+        } else {
+            player2.setNumOfWins(player2.getNumOfWins() + 1);
+            player1.setNumOfLooses(player1.getNumOfLooses() + 1);
+        }
+    }
+
+
 }
