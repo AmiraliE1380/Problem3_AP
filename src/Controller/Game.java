@@ -14,6 +14,7 @@ public class Game {
     private Piece.Color movingPlayer;
     private Piece selectedPiece;
     private Piece killedPiece;
+    private Undo undo;
     private boolean hasMoved;
 
     private Game(){}
@@ -22,13 +23,14 @@ public class Game {
         return game;
     }
 
-    public void startGame(Player player1, Player player2, int turns) {
+    public void startGame(Player player1, Player player2, int turns, int totalUndo) {
         this.player1 = player1;
         this.player2 = player2;
         this.turns = getLimit(turns);
         movingPlayer = Piece.Color.WHITE;
         initializePieces();
         hasMoved = false;
+        undo = new Undo(player1, player2, totalUndo);
     }
 
     private int getLimit(int turns) {
@@ -115,9 +117,9 @@ public class Game {
         resetAlivePieces(killedPiece);
         killedPiece = null;
         selectedPiece = null;
-        selectedPiece = null;
         turns--;
         hasMoved = false;
+        undo.makeMove();
     }
 
     private void resetAlivePieces(Piece killedPiece) {
@@ -162,5 +164,16 @@ public class Game {
         }
     }
 
-
+    public void undo() throws Exception {
+        if(!undo.canUndo(movingPlayer)) {
+            throw new Exception("You can't undo.");
+        }
+        undo.execute(movingPlayer);
+        hasMoved = false;
+        if(killedPiece != null) {
+            killedPiece = null;
+        }
+        selectedPiece.setX(undo.getXOrigin());
+        selectedPiece.setY(undo.getYOrigin());
+    }
 }
