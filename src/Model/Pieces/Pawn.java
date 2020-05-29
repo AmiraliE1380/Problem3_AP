@@ -73,4 +73,6 @@ public class Pawn extends Piece {
         }
         return false;
     }
+
+    //TODO: METHODS FOR MOVEMENT NEED TEST
 }
