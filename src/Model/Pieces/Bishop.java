@@ -1,8 +1,8 @@
 package Model.Pieces;
 
 public class Bishop extends Piece {
-    public Bishop(Color color, Type type, int x, int y) {
-        super(color, type, x, y);
+    public Bishop(Color color, int x, int y) {
+        super(color, Type.BISHOP, x, y);
     }
 
     @Override
