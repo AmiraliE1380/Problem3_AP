@@ -1,5 +1,17 @@
-.labelStyle {
+.myLabelStyle {
     -fx-text-fill: #05bff0;
     -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+
+.labelError {
+    -fx-text-fill: red;
+    -fx-font-size: bold;
+    -fx-font-size: 20;
+}
+
+.labelSuccess {
+    -fx-text-fill: green;
+    -fx-font-size: bold;
     -fx-font-size: 20;
 }
