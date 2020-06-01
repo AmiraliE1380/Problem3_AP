@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterAndLoginView.Register.RegisterManager">
    <children>
-      <GridPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Style.css">
+      <GridPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../Style.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -16,9 +16,10 @@
             <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
         </rowConstraints>
-          <Label styleClass="labelStyle" text="Register" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-          <TextField prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-          <TextField prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+          <Label styleClass="labelStyle" text="Register Menu" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+          <TextField prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+          <TextField prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+          <Button GridPane.rowIndex="3" text="Register" GridPane.halignment="CENTER"></Button>
       </GridPane>
    </children>
 </AnchorPane>

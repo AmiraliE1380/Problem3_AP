@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class RegisterMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+        new RegisterManager().setStage(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("RegisterDesign.fxml"));
         primaryStage.setTitle("Ebi's chess");
         primaryStage.setScene(new Scene(root, 600, 400));
