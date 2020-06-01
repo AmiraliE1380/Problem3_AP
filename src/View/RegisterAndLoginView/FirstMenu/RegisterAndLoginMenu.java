@@ -1,4 +1,4 @@
-package View.RegisterAndLoginView;
+package View.RegisterAndLoginView.FirstMenu;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +9,9 @@ import javafx.stage.Stage;
 public class RegisterAndLoginMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+        new RegisterAndLoginManager().setStage(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("RegisterAndLoginMenuDesign.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Ebi's chess");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }

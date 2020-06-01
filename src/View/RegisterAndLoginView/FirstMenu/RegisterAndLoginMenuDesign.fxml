@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterAndLoginView.RegisterAndLoginManager">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterAndLoginView.FirstMenu.RegisterAndLoginManager">
    <children>
-      <GridPane prefHeight="371.0" prefWidth="600.0">
+      <GridPane stylesheets="@../Style.css" prefHeight="371.0" prefWidth="600.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="184.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="230.0" />
@@ -19,15 +19,14 @@
           <RowConstraints maxHeight="83.0" minHeight="1.0" prefHeight="47.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
         </rowConstraints>
-          <Label prefHeight="36.0" prefWidth="249.0" text="Welcome to Ebi's Chess!" textFill="#05bff0" GridPane.columnIndex="1">
-              <font>
-                  <Font name="System Bold" size="20.0" />
-              </font>
+          <Label styleClass="labelStyle" prefHeight="36.0" prefWidth="249.0" text="Welcome to Ebi's Chess!" GridPane.columnIndex="1">
+
           </Label>
           <Button prefHeight="25.0" prefWidth="159.0" text="Register" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" onMouseClicked="#goToRegisterMenu" />
           <Button prefHeight="25.0" prefWidth="159.0" text="Login" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" onMouseClicked="#goToLoginMenu"/>
           <Button prefHeight="25.0" prefWidth="159.0" text="Delete Account" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" onMouseClicked="#goToDeleteAccountMenu"/>
           <Button prefHeight="25.0" prefWidth="159.0" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" onMouseClicked="#exit"/>
+
       </GridPane>
    </children>
 </AnchorPane>
