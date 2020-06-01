@@ -17,9 +17,10 @@
             <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
         </rowConstraints>
           <Label styleClass="labelStyle" text="Register Menu" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-          <TextField prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-          <TextField prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-          <Button GridPane.rowIndex="3" text="Register" GridPane.halignment="CENTER"></Button>
+          <TextField fx:id="usernameField" promptText="username" prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+          <PasswordField fx:id="passwordField" promptText="password" prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+          <Button GridPane.rowIndex="3" text="Register" GridPane.halignment="CENTER" onMouseClicked="#login"></Button>
+          <Label ></Label>
       </GridPane>
    </children>
 </AnchorPane>
