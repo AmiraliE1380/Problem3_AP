@@ -9,9 +9,9 @@ import javafx.stage.Stage;
 public class RegisterAndLoginMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FirstMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("RegisterAndLoginMenuDesign.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 }
