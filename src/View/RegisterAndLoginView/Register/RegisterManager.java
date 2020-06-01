@@ -17,13 +17,15 @@ public class RegisterManager {
         this.stage = stage;
     }
 
-    public void login() {
+    public void register() {
         String username = usernameField.getText();
         String password = passwordField.getText();
         try {
-            RegisterAndLogin.getInstance().login(username, password);
+            RegisterAndLogin.getInstance().register(username, password);
+            errorMessage.setText("");
             successMessage.setText("You have successfully registered!");
         } catch (Exception e) {
+            successMessage.setText("");
             errorMessage.setText("This username has been used!");
         }
     }

@@ -19,7 +19,7 @@
           <Label styleClass="myLabelStyle" text="Register Menu" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
           <TextField fx:id="usernameField" promptText="username" prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
           <PasswordField fx:id="passwordField" promptText="password" prefHeight="25.0" prefWidth="234.0" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-          <Button GridPane.rowIndex="3" text="Register" GridPane.halignment="CENTER" onMouseClicked="#login"></Button>
+          <Button GridPane.rowIndex="3" text="Register" GridPane.halignment="CENTER" onMouseClicked="#register"></Button>
           <Label fx:id="errorMessage" styleClass="labelError" GridPane.rowIndex="4" GridPane.halignment="CENTER"></Label>
           <Label fx:id="successMessage" styleClass="labelSuccess" GridPane.rowIndex="4" GridPane.halignment="CENTER"></Label>
       </GridPane>
