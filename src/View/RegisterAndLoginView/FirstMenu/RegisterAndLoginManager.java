@@ -7,24 +7,22 @@ import View.RegisterAndLoginView.Login.LoginMenu;
 import View.RegisterAndLoginView.MenuManager;
 import View.RegisterAndLoginView.Register.RegisterManager;
 import View.RegisterAndLoginView.Register.RegisterMenu;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class RegisterAndLoginManager extends MenuManager {
     private static Stage stage;
-    private static RegisterAndLoginMenu menu;
 
     public static void setStage(Stage stage) {
         RegisterAndLoginManager.stage = stage;
     }
 
-    public static void setMenu(RegisterAndLoginMenu menu) {
-        RegisterAndLoginManager.menu = menu;
+    public static void setManagersMenu(RegisterAndLoginMenu managersMenu) {
+        RegisterAndLoginManager.managersMenu = managersMenu;
     }
 
     public void goToRegisterMenu() {
         try {
-            RegisterManager.setParentMenu(menu);
+            RegisterManager.setParentMenu(managersMenu);
             new RegisterMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -33,7 +31,7 @@ public class RegisterAndLoginManager extends MenuManager {
 
     public void goToLoginMenu() {
         try {
-            LoginManager.setParentMenu(menu);
+            LoginManager.setParentMenu(managersMenu);
             new LoginMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -42,7 +40,7 @@ public class RegisterAndLoginManager extends MenuManager {
 
     public void goToDeleteAccountMenu() {
         try {
-            DeletingManager.setParentMenu(menu);
+            DeletingManager.setParentMenu(managersMenu);
             new DeletingMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());

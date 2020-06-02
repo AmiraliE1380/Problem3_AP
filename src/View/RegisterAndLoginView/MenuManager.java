@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 public class MenuManager {
     protected static Stage stage;
     protected static Application parentMenu;
+    protected static Application managersMenu;
 
     public static void setStage(Stage stage) {
         MenuManager.stage = stage;
@@ -14,6 +15,10 @@ public class MenuManager {
 
     public static void setParentMenu(Application parentMenu) {
         MenuManager.parentMenu = parentMenu;
+    }
+
+    public static void setManagersMenu(Application managersMenu) {
+        MenuManager.managersMenu = managersMenu;
     }
 
     public void exit() {
