@@ -21,7 +21,7 @@ public class LoginManager extends MenuManager {
     }
 
 
-    public void Login() {
+    public void login() {
         try {
             RegisterAndLogin.getInstance().login(usernameField.getText(), passwordField.getText());
             //TODO: GO TO ACCOUNT MENU

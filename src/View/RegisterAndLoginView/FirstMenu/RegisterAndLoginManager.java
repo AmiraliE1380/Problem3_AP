@@ -1,5 +1,7 @@
 package View.RegisterAndLoginView.FirstMenu;
 
+import View.RegisterAndLoginView.DeleteAccount.DeletingManager;
+import View.RegisterAndLoginView.DeleteAccount.DeletingMenu;
 import View.RegisterAndLoginView.Login.LoginManager;
 import View.RegisterAndLoginView.Login.LoginMenu;
 import View.RegisterAndLoginView.MenuManager;
@@ -38,6 +40,12 @@ public class RegisterAndLoginManager extends MenuManager {
         }
     }
 
-    public void goToDeleteAccountMenu(MouseEvent mouseEvent) {
+    public void goToDeleteAccountMenu() {
+        try {
+            DeletingManager.setParentMenu(menu);
+            new DeletingMenu().start(stage);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 }

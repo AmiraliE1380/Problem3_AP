@@ -15,3 +15,14 @@
     -fx-font-weight: bold;
     -fx-font-size: 20;
 }
+
+.redButton {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+.redButton:hover {
+    -fx-background-color: linear-gradient(#ff3184, #ff00e5);
+}

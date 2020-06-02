@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0"
             xmlns="http://javafx.com/javafx/10.0.2-internal"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="View.RegisterAndLoginView.Login.LoginManager">
+            fx:controller="View.RegisterAndLoginView.DeleteAccount.DeletingManager">
     <children>
         <GridPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Style.css">
             <columnConstraints>
@@ -21,13 +24,14 @@
                 <RowConstraints maxHeight="80.0" minHeight="23.0" prefHeight="25.0" />
                 <RowConstraints maxHeight="54.0" minHeight="30.0" prefHeight="52.0" />
             </rowConstraints>
-            <Label styleClass="myLabelStyle" text="Login Menu" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+            <Label styleClass="myLabelStyle" text="Delete Account" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
             <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="234.0" promptText="username" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="234.0" promptText="password" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button onMouseClicked="#login" styleClass="redButton" prefWidth="159.0" text="Login" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Button onMouseClicked="#delete" styleClass="redButton" prefWidth="159.0" text="delete" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Button onMouseClicked="#back" styleClass="redButton" prefHeight="25.0" prefWidth="159.0" text="back" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
             <Button onMouseClicked="#exit" styleClass="redButton" prefHeight="25.0" prefWidth="159.0" text="exit" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
             <Label fx:id="errorMessage" styleClass="labelError" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label fx:id="successMessage" styleClass="labelSuccess" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
         </GridPane>
     </children>
 </AnchorPane>

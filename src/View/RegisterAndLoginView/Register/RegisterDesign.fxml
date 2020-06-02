@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterAndLoginView.Register.RegisterManager">
    <children>
-      <GridPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Style.css">
+      <GridPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Style.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -21,9 +21,9 @@
           <Label styleClass="myLabelStyle" text="Register Menu" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
           <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="234.0" promptText="username" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
           <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="234.0" promptText="password" GridPane.fillWidth="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-          <Button onMouseClicked="#register" prefWidth="65.0" text="Register" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-          <Button onMouseClicked="#back" prefHeight="25.0" prefWidth="65.0" text="back" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-          <Button onMouseClicked="#exit" prefHeight="25.0" prefWidth="65.0" text="exit" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+          <Button onMouseClicked="#register" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="Register" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+          <Button onMouseClicked="#back" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="back" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+          <Button onMouseClicked="#exit" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="exit" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
           <Label fx:id="errorMessage" styleClass="labelError" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
           <Label fx:id="successMessage" styleClass="labelSuccess" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
       </GridPane>
