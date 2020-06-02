@@ -1,6 +1,7 @@
 package View.AccountView.ChangePasswordView;
 
 import Controller.Account;
+import View.AccountView.MainView.MainMenu;
 import View.RegisterAndLoginView.MenuManager;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,6 +11,9 @@ public class ChangePasswordManager extends MenuManager {
     public PasswordField passwordField;
     public Label successMessage;
     public Button changePasswordButton;
+    {
+        parentMenu = new MainMenu();
+    }
 
     public void changePassword() {
         Account.getInstance().changePassword(passwordField.getText());

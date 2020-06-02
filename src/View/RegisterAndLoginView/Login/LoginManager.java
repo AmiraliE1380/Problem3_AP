@@ -12,16 +12,13 @@ public class LoginManager extends MenuManager {
     public TextField usernameField;
     public PasswordField passwordField;
     public Label errorMessage;
-
-    public static void setParentMenu(RegisterAndLoginMenu parentMenu) {
-        LoginManager.parentMenu = parentMenu;
+    {
+        parentMenu = new RegisterAndLoginMenu();
     }
-
 
     public void login() {
         try {
             RegisterAndLogin.getInstance().login(usernameField.getText(), passwordField.getText());
-            MainMenuManager.setParentMenu(parentMenu);
             new MainMenu().start(stage);
         } catch (Exception e) {
             errorMessage.setText(e.getMessage());

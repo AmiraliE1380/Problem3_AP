@@ -12,9 +12,8 @@ public class RegisterManager extends MenuManager {
     public PasswordField passwordField;
     public Label errorMessage;
     public Label successMessage;
-
-    public static void setParentMenu(RegisterAndLoginMenu parentMenu) {
-        RegisterManager.parentMenu = parentMenu;
+    {
+        parentMenu = new RegisterAndLoginMenu();
     }
 
     public void register() {

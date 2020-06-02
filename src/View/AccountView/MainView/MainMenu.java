@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 public class MainMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        MainMenuManager.setManagersMenu(this);
         Parent root = FXMLLoader.load(getClass().getResource("MainMenuDesign.fxml"));
         primaryStage.setTitle("Ebi's chess");
         primaryStage.setScene(new Scene(root, 600, 400));

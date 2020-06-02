@@ -16,13 +16,8 @@ public class RegisterAndLoginManager extends MenuManager {
         RegisterAndLoginManager.stage = stage;
     }
 
-    public static void setManagersMenu(RegisterAndLoginMenu managersMenu) {
-        RegisterAndLoginManager.managersMenu = managersMenu;
-    }
-
     public void goToRegisterMenu() {
         try {
-            RegisterManager.setParentMenu(managersMenu);
             new RegisterMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -31,7 +26,6 @@ public class RegisterAndLoginManager extends MenuManager {
 
     public void goToLoginMenu() {
         try {
-            LoginManager.setParentMenu(managersMenu);
             new LoginMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -40,7 +34,6 @@ public class RegisterAndLoginManager extends MenuManager {
 
     public void goToDeleteAccountMenu() {
         try {
-            DeletingManager.setParentMenu(managersMenu);
             new DeletingMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());

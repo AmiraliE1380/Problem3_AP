@@ -1,6 +1,7 @@
 package View.RegisterAndLoginView.DeleteAccount;
 
 import Controller.RegisterAndLogin;
+import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
 import View.RegisterAndLoginView.MenuManager;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -12,6 +13,9 @@ public class DeletingManager extends MenuManager {
     public PasswordField passwordField;
     public Label errorMessage;
     public Label successMessage;
+    {
+        parentMenu = new RegisterAndLoginMenu();
+    }
 
     public void delete() {
         try {
