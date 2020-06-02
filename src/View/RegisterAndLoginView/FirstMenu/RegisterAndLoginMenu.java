@@ -9,7 +9,8 @@ import javafx.stage.Stage;
 public class RegisterAndLoginMenu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        new RegisterAndLoginManager().setStage(primaryStage);
+        RegisterAndLoginManager.setStage(primaryStage);
+        RegisterAndLoginManager.setMenu(this);
         Parent root = FXMLLoader.load(getClass().getResource("RegisterAndLoginMenuDesign.fxml"));
         primaryStage.setTitle("Ebi's chess");
         primaryStage.setScene(new Scene(root, 600, 400));
