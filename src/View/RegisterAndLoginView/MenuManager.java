@@ -12,12 +12,12 @@ public class MenuManager {
         MenuManager.stage = stage;
     }
 
-    public void exit() {
-        System.exit(1);
+    public static void setParentMenu(Application parentMenu) {
+        MenuManager.parentMenu = parentMenu;
     }
 
-    public void setParentMenu(Application parentMenu) {
-        MenuManager.parentMenu = parentMenu;
+    public void exit() {
+        System.exit(1);
     }
 
     public void back() {

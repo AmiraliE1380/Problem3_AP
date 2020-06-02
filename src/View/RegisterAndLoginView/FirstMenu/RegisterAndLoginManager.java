@@ -23,8 +23,7 @@ public class RegisterAndLoginManager extends MenuManager {
     public void goToRegisterMenu() {
         try {
             RegisterManager.setParentMenu(menu);
-            RegisterMenu registerMenu = new RegisterMenu();
-            registerMenu.start(stage);
+            new RegisterMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -33,8 +32,7 @@ public class RegisterAndLoginManager extends MenuManager {
     public void goToLoginMenu() {
         try {
             LoginManager.setParentMenu(menu);
-            LoginMenu loginMenu = new LoginMenu();
-            loginMenu.start(stage);
+            new LoginMenu().start(stage);
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
