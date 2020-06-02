@@ -1,4 +1,5 @@
 import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
+import View.RegisterAndLoginView.MenuManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -11,6 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        MenuManager.setStage(primaryStage);
         try {
             new RegisterAndLoginMenu().start(primaryStage);
         } catch (Exception e) {

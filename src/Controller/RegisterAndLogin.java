@@ -26,7 +26,10 @@ public class RegisterAndLogin {
 
     public void register(String username, String password) throws Exception {
         if(Player.getAllPlayers().containsKey(username)) {
-            throw new Exception("Username has been used by another user.");
+            throw new Exception("Username has been used by another user!");
+        }
+        if(username.length() == 0 || password.length() == 0) {
+            throw new Exception("Enter a username and a password!");
         }
         Player.getAllPlayers().put(username, new Player(username, password));
     }

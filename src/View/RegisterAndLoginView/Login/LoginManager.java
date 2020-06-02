@@ -1,29 +1,30 @@
-package View.RegisterAndLoginView.Register;
+package View.RegisterAndLoginView.Login;
 
 import Controller.RegisterAndLogin;
 import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
 import View.RegisterAndLoginView.MenuManager;
+import View.RegisterAndLoginView.Register.RegisterManager;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
-public class RegisterManager extends MenuManager {
+public class LoginManager extends MenuManager {
     public TextField usernameField;
     public PasswordField passwordField;
     public Label errorMessage;
     public Label successMessage;
 
     public static void setParentMenu(RegisterAndLoginMenu parentMenu) {
-        RegisterManager.parentMenu = parentMenu;
+        LoginManager.parentMenu = parentMenu;
     }
 
-    public void register() {
+
+    public void Login() {
         try {
-            RegisterAndLogin.getInstance().register(usernameField.getText(), passwordField.getText());
-            errorMessage.setText("");
-            successMessage.setText("You have successfully registered!");
+            RegisterAndLogin.getInstance().login(usernameField.getText(), passwordField.getText());
+            //TODO: GO TO ACCOUNT MENU
         } catch (Exception e) {
-            successMessage.setText("");
             errorMessage.setText(e.getMessage());
         }
     }
