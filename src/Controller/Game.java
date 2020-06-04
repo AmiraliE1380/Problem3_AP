@@ -71,6 +71,7 @@ public class Game {
     }
 
     public void endGame() {
+        Player.adjustScores();
         player1 = null;
         player2 = null;
         turns = 0;

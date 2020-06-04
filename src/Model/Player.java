@@ -1,7 +1,6 @@
 package Model;
 
 import java.util.HashMap;
-import java.util.logging.Handler;
 
 public class Player {
     private static HashMap<String, Player> allPlayers = new HashMap<String, Player>();
@@ -12,6 +11,7 @@ public class Player {
     private int numOfOwnForfeits;
     private int numOfDraws;
     private int numOfLooses;
+    private int score;
     private boolean login;
 
     public Player(String username, String password) {
@@ -36,6 +36,12 @@ public class Player {
 
     public static void remove(String username) {
         allPlayers.remove(username);
+    }
+
+    public static void adjustScores() {
+        for(Player player: allPlayers.values()) {
+            player.score = player.calculateScore();
+        }
     }
 
     public String getUsername() {
@@ -64,6 +70,10 @@ public class Player {
 
     public Integer getNumOfLooses() {
         return numOfLooses;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public boolean isLogin() {
