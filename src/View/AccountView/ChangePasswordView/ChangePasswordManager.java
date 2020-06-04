@@ -10,15 +10,22 @@ import javafx.scene.control.PasswordField;
 public class ChangePasswordManager extends MenuManager {
     public PasswordField passwordField;
     public Label successMessage;
+    public Label errorMessage;
     public Button changePasswordButton;
     {
         parentMenu = new MainMenu();
     }
 
     public void changePassword() {
-        Account.getInstance().changePassword(passwordField.getText());
-        passwordField.setDisable(true);
-        changePasswordButton.setDisable(true);
-        successMessage.setText("You have successfully changed tour password!");
+        try {
+            Account.getInstance().changePassword(passwordField.getText());
+            passwordField.setDisable(true);
+            changePasswordButton.setDisable(true);
+            errorMessage.setText("");
+            successMessage.setText("You have successfully changed tour password!");
+        } catch (Exception e) {
+            successMessage.setText("");
+            errorMessage.setText(e.getMessage());
+        }
     }
 }

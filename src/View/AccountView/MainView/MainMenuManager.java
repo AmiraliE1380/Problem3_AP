@@ -1,8 +1,7 @@
 package View.AccountView.MainView;
 
-import View.AccountView.ChangePasswordView.ChangePasswordManager;
 import View.AccountView.ChangePasswordView.ChangePasswordMenu;
-import View.AccountView.ScoreboardView.ScoreboardMenu;
+import View.AccountView.ScoreboardMenu;
 import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
 import View.RegisterAndLoginView.MenuManager;
 

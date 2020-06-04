@@ -1,4 +1,4 @@
-package View.AccountView.ScoreboardView;
+package View.AccountView;
 
 import Controller.Account;
 import Model.Player;

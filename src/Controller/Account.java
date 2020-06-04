@@ -21,7 +21,10 @@ public class Account {
         this.player = player;
     }
 
-    public void changePassword(String newPassword) {
+    public void changePassword(String newPassword) throws Exception {
+        if(newPassword.length() == 0) {
+            throw new Exception("Enter a password!");
+        }
         player.setPassword(newPassword);
     }
 
