@@ -39,6 +39,9 @@ public class Account {
         if(!Player.getAllPlayers().containsKey(secondPlayerName)) {
             throw new Exception("No player exist with this username.");
         }
+        if(Player.getPlayerByName(secondPlayerName).equals(player)) {
+            throw new Exception("You must enter you rival's username!");
+        }
         Game.getInstance().startGame(player, Player.getPlayerByName(secondPlayerName), numOfTurns, totalUndo);
     }
 
