@@ -1,5 +1,5 @@
 import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
-import View.RegisterAndLoginView.MenuManager;
+import View.MenuManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

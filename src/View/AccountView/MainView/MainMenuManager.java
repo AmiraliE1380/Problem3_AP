@@ -4,7 +4,7 @@ import View.AccountView.ChangePasswordView.ChangePasswordMenu;
 import View.AccountView.GameSetup.GameSetupMenu;
 import View.AccountView.ScoreboardMenu;
 import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
-import View.RegisterAndLoginView.MenuManager;
+import View.MenuManager;
 
 public class MainMenuManager extends MenuManager {
     {

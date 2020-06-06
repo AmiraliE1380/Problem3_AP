@@ -2,7 +2,8 @@ package View.AccountView.GameSetup;
 
 import Controller.Account;
 import View.AccountView.MainView.MainMenu;
-import View.RegisterAndLoginView.MenuManager;
+import View.GameView.GameMenu;
+import View.MenuManager;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -19,6 +20,7 @@ public class GameSetupManager extends MenuManager {
         try {
             Account.getInstance().startNewGame(usernameField.getText(), Integer.parseInt(limitField.getText()),
                     Integer.parseInt(undoLimit.getText()));
+            new GameMenu().start(stage);
         } catch(NumberFormatException e) {
             errorMessage.setText("Enter a number for the undo and the limit field!");
         } catch (Exception e) {

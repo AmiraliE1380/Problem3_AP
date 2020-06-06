@@ -3,7 +3,7 @@ package View.RegisterAndLoginView.Login;
 import Controller.RegisterAndLogin;
 import View.AccountView.MainView.*;
 import View.RegisterAndLoginView.FirstMenu.RegisterAndLoginMenu;
-import View.RegisterAndLoginView.MenuManager;
+import View.MenuManager;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;

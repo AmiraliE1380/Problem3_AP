@@ -12,15 +12,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 public class ScoreboardMenu extends Application {
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Ebi's chess");
-        ObservableList<Player> players = FXCollections.observableArrayList(Account.getInstance().getPlayersBasedOnScore());
+        primaryStage.setTitle("scoreboard");
+        ObservableList<Player> players = FXCollections.
+                observableArrayList(Account.getInstance().getPlayersBasedOnScore());
 
         TableView<Player> table = new TableView<>();
         table.setItems(players);

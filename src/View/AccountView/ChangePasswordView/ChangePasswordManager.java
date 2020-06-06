@@ -2,7 +2,7 @@ package View.AccountView.ChangePasswordView;
 
 import Controller.Account;
 import View.AccountView.MainView.MainMenu;
-import View.RegisterAndLoginView.MenuManager;
+import View.MenuManager;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;

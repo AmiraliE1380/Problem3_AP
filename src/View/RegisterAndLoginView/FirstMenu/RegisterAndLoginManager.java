@@ -2,7 +2,7 @@ package View.RegisterAndLoginView.FirstMenu;
 
 import View.RegisterAndLoginView.DeleteAccount.DeletingMenu;
 import View.RegisterAndLoginView.Login.LoginMenu;
-import View.RegisterAndLoginView.MenuManager;
+import View.MenuManager;
 import View.RegisterAndLoginView.Register.RegisterMenu;
 import javafx.stage.Stage;
 
