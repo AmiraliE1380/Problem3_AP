@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 public class GameManager extends MenuManager implements Initializable {
     public Label showPlayers;
     public Label assertionLabel;
+    public Label errorMessage;
     public GridPane chessBoard;
     public Group pieces = new Group();
     private Game game = Game.getInstance();
@@ -41,7 +42,6 @@ public class GameManager extends MenuManager implements Initializable {
                 if(piece != null) {
                     PieceView pieceView = new PieceView(piece, chessBoard);
                     pieces.getChildren().add(pieceView);
-                    tile.setPieceView(pieceView);
                     chessBoard.add(pieceView, j, i);
                 }
             }
@@ -76,25 +76,30 @@ public class GameManager extends MenuManager implements Initializable {
 
     }
 
-    public PieceView makeMove(Piece piece) {
+    public PieceView makePiece(Piece piece) {
         PieceView pieceView = new PieceView(piece, chessBoard);
         pieceView.setOnMouseReleased(e -> {
             int newX = toBoard(pieceView.getLayoutX(), true);
             int newY = toBoard(pieceView.getLayoutY(), false);
             if (newX < 0 || newY < 0 || newX >= 8 || newY >= 8) {
                 pieceView.abortMove();
-            } else {//TODO: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
-                moveSuccessfully(pieceView);
+            } else {
+                moveSuccessfully(pieceView, newX, newY);
             }
         });
         return null;
     }
 
-    private void moveSuccessfully(PieceView pieceView) {
+    private void moveSuccessfully(PieceView pieceView, int newX, int newY) {
         try {
-
+            Piece piece = pieceView.getPiece();
+            game.select(piece.getX(), piece.getY());
+            game.move(8 - newX, newY);
+            chessBoard.add(pieceView, newY + 1, newX);
+            //TODO: YOU WERE HERE
         } catch (Exception e) {
-
+            assertionLabel.setText("");
+            errorMessage.setText(e.getMessage());
         }
     }
 
@@ -102,7 +107,7 @@ public class GameManager extends MenuManager implements Initializable {
     private int toBoard(double pixel, boolean isX) {
         if(isX) {
             return (int) (pixel - chessBoard.getLayoutX() - 25) / 25;
-            //TODO:
+            //TODO: test
         } else {
             return (int) (pixel - chessBoard.getLayoutY() + 25) / 25;
         }

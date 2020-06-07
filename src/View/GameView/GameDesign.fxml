@@ -5,7 +5,8 @@
 
 <AnchorPane prefHeight="560.0" prefWidth="969.0"  stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.GameView.GameManager">
     <Label fx:id="showPlayers" alignment="BASELINE_CENTER" layoutX="-2.0" layoutY="56.0" prefHeight="72.0" prefWidth="285.0" styleClass="myLabelStyle" />
-    <Label fx:id="assertionLabel" alignment="BASELINE_CENTER" layoutX="-2.0" layoutY="146.0" prefHeight="117.0" prefWidth="347.0" styleClass="myLabelStyle" />
+    <Label fx:id="assertionLabel" alignment="BASELINE_CENTER" layoutX="-2.0" layoutY="146.0" prefHeight="117.0" prefWidth="347.0" styleClass="labelSuccess" />
+    <Label fx:id="errorMessage" alignment="BASELINE_CENTER" layoutX="-2.0" layoutY="146.0" prefHeight="117.0" prefWidth="347.0" styleClass="labelError" />
     <Button layoutX="66.0" layoutY="421.0" onMouseClicked="#forfeit" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="forfeit" />
     <Button layoutX="66.0" layoutY="467.0" onMouseClicked="#exit" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="exit" />
     <Button layoutX="66.0" layoutY="271.0"  prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="next turn" />

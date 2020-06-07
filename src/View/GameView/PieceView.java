@@ -65,4 +65,8 @@ public class PieceView extends StackPane {
     public double getOldY() {
         return oldY;
     }
+
+    public Piece getPiece() {
+        return piece;
+    }
 }
