@@ -30,7 +30,6 @@ public class GameManager extends MenuManager implements Initializable {
         setBoardsNumbersAndLetters();
         constructTilesAndPieces();
         chessBoard.getChildren().addAll(pieces);
-
     }
 
     private void constructTilesAndPieces() {
@@ -38,12 +37,13 @@ public class GameManager extends MenuManager implements Initializable {
             for(int j = 1; j < 9; j++) {
                 Tile tile = new Tile((i + j) % 2 == 0);
                 Piece piece = game.getPiece(8 - i, j);
+                chessBoard.add(tile, j, i);
                 if(piece != null) {
                     PieceView pieceView = new PieceView(piece);
                     pieces.getChildren().add(pieceView);
                     tile.setPieceView(pieceView);
+                    chessBoard.add(pieceView, j, i);
                 }
-                chessBoard.add(tile, j, i);
             }
         }
     }
