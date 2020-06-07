@@ -30,13 +30,10 @@ public class PieceView extends StackPane {
         setOnMousePressed(e -> {
             mouseX = e.getSceneX();
             mouseY = e.getSceneY();
-            System.out.println(mouseX);
-            System.out.println(mouseY);
         });
 
         setOnMouseDragged(e -> {
             chessboard.getChildren().remove(this);
-            System.out.println(e.getSceneX() + "   " + e.getSceneY());
             relocate(e.getSceneX(), e.getSceneY());
         });
     }

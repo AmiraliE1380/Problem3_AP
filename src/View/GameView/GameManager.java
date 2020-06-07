@@ -5,16 +5,20 @@ import Model.Pieces.Piece;
 import View.AccountView.MainView.MainMenu;
 import View.MenuManager;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GameManager extends MenuManager implements Initializable {
+    public AnchorPane pane;
     public Label showPlayers;
     public Label assertionLabel;
     public Label errorMessage;
@@ -27,13 +31,18 @@ public class GameManager extends MenuManager implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        showPlayers.setText(game.getPlayer1() + " vs " + game.getPlayer2());
-        setBoardsNumbersAndLetters();
-        constructTilesAndPieces();
-        chessBoard.getChildren().addAll(pieces);
+         String address = "resources\\background image\\Game_Background.jpeg";
+         Image image = new Image(address);
+         BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+                 BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+         Background background = new Background(backgroundimage);
+         pane.setBackground(background);
+         constructTilesAndPieces();
     }
 
-    private void constructTilesAndPieces() {
+    public void constructTilesAndPieces() {
+        showPlayers.setText(game.getPlayer1() + " vs " + game.getPlayer2());
+        setBoardsNumbersAndLetters();
         for(int i = 0; i < 8; i++) {
             for(int j = 1; j < 9; j++) {
                 Tile tile = new Tile((i + j) % 2 == 0);
@@ -46,6 +55,7 @@ public class GameManager extends MenuManager implements Initializable {
                 }
             }
         }
+        chessBoard.getChildren().addAll(pieces);
     }
 
     private void setBoardsNumbersAndLetters() {
@@ -74,15 +84,6 @@ public class GameManager extends MenuManager implements Initializable {
 
     public PieceView makePiece(Piece piece) {
         PieceView pieceView = new PieceView(piece, chessBoard);
-        pieceView.setOnMouseReleased(e -> {
-            int newX = toBoard(pieceView.getLayoutX(), true);
-            int newY = toBoard(pieceView.getLayoutY(), false);
-            if (newX < 0 || newY < 0 || newX >= 8 || newY >= 8) {
-                pieceView.abortMove();
-            } else {
-                moveSuccessfully(pieceView, newX, newY);
-            }
-        });
         return pieceView;
     }
 
@@ -100,7 +101,6 @@ public class GameManager extends MenuManager implements Initializable {
             errorMessage.setText(e.getMessage());
         }
     }
-
 
     private int toBoard(double pixel, boolean isX) {
         if(isX) {

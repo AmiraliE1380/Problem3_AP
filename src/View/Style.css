@@ -5,15 +5,15 @@
 }
 
 .labelError {
-    -fx-text-fill: red;
+    -fx-text-fill: #ff4033;
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 30;
 }
 
 .labelSuccess {
-    -fx-text-fill: green;
+    -fx-text-fill: #00ff00;
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 30;
 }
 
 .redButton {
@@ -25,9 +25,4 @@
 
 .redButton:hover {
     -fx-background-color: linear-gradient(#ff3184, #ff00e5);
-}
-
-.l {
-    -fx-background-color: #ffcce3;
-    -fx-background-color: #ff478e;
 }
