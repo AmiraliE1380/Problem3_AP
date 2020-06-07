@@ -8,7 +8,7 @@
     <Label fx:id="assertionLabel" alignment="BASELINE_CENTER" layoutX="-2.0" layoutY="146.0" prefHeight="117.0" prefWidth="347.0" styleClass="myLabelStyle" />
     <Button layoutX="66.0" layoutY="421.0" onMouseClicked="#forfeit" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="forfeit" />
     <Button layoutX="66.0" layoutY="467.0" onMouseClicked="#exit" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="exit" />
-    <Button layoutX="66.0" layoutY="271.0" onMouseClicked="#move" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="next turn" />
+    <Button layoutX="66.0" layoutY="271.0"  prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="next turn" />
     <Button layoutX="66.0" layoutY="319.0" onMouseClicked="#undo" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="undo" />
     <GridPane fx:id="chessBoard" layoutX="393.0" layoutY="59.0" prefHeight="450.0" prefWidth="450.0">
       <rowConstraints>

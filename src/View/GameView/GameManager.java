@@ -39,7 +39,7 @@ public class GameManager extends MenuManager implements Initializable {
                 Piece piece = game.getPiece(8 - i, j);
                 chessBoard.add(tile, j, i);
                 if(piece != null) {
-                    PieceView pieceView = new PieceView(piece);
+                    PieceView pieceView = new PieceView(piece, chessBoard);
                     pieces.getChildren().add(pieceView);
                     tile.setPieceView(pieceView);
                     chessBoard.add(pieceView, j, i);
@@ -72,8 +72,40 @@ public class GameManager extends MenuManager implements Initializable {
         }
     }
 
-    public void move() {
+    public void tryMove() {
 
+    }
+
+    public PieceView makeMove(Piece piece) {
+        PieceView pieceView = new PieceView(piece, chessBoard);
+        pieceView.setOnMouseReleased(e -> {
+            int newX = toBoard(pieceView.getLayoutX(), true);
+            int newY = toBoard(pieceView.getLayoutY(), false);
+            if (newX < 0 || newY < 0 || newX >= 8 || newY >= 8) {
+                pieceView.abortMove();
+            } else {//TODO: UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+                moveSuccessfully(pieceView);
+            }
+        });
+        return null;
+    }
+
+    private void moveSuccessfully(PieceView pieceView) {
+        try {
+
+        } catch (Exception e) {
+
+        }
+    }
+
+
+    private int toBoard(double pixel, boolean isX) {
+        if(isX) {
+            return (int) (pixel - chessBoard.getLayoutX() - 25) / 25;
+            //TODO:
+        } else {
+            return (int) (pixel - chessBoard.getLayoutY() + 25) / 25;
+        }
     }
 
     public void undo() {
