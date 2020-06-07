@@ -40,7 +40,7 @@ public class GameManager extends MenuManager implements Initializable {
                 Piece piece = game.getPiece(8 - i, j);
                 chessBoard.add(tile, j, i);
                 if(piece != null) {
-                    PieceView pieceView = new PieceView(piece, chessBoard);
+                    PieceView pieceView = makePiece(piece);
                     pieces.getChildren().add(pieceView);
                     chessBoard.add(pieceView, j, i);
                 }
@@ -72,10 +72,6 @@ public class GameManager extends MenuManager implements Initializable {
         }
     }
 
-    public void tryMove() {
-
-    }
-
     public PieceView makePiece(Piece piece) {
         PieceView pieceView = new PieceView(piece, chessBoard);
         pieceView.setOnMouseReleased(e -> {
@@ -87,7 +83,7 @@ public class GameManager extends MenuManager implements Initializable {
                 moveSuccessfully(pieceView, newX, newY);
             }
         });
-        return null;
+        return pieceView;
     }
 
     private void moveSuccessfully(PieceView pieceView, int newX, int newY) {
@@ -96,6 +92,8 @@ public class GameManager extends MenuManager implements Initializable {
             game.select(piece.getX(), piece.getY());
             game.move(8 - newX, newY);
             chessBoard.add(pieceView, newY + 1, newX);
+            errorMessage.setText("");
+            assertionLabel.setText(game.getMovedPlayerName() + " moved!");
             //TODO: YOU WERE HERE
         } catch (Exception e) {
             assertionLabel.setText("");

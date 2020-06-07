@@ -194,4 +194,11 @@ public class Game {
     public ArrayList<Piece> getPieces() {
         return pieces;
     }
+
+    public String getMovedPlayerName() {
+        if(movingPlayer.equals(Piece.Color.BLACK)) {
+            return player2.getUsername();
+        }
+        return player1.getUsername();
+    }
 }
