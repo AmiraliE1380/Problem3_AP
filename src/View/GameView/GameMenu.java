@@ -15,7 +15,6 @@ public class GameMenu extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
-
   /*
         VBox vBox = new VBox();
         primaryStage.setScene(new Scene(vBox));

@@ -5,7 +5,7 @@ import javafx.scene.shape.Rectangle;
 
 public class Tile extends Rectangle {
     private boolean isDark;
-
+    private PieceView pieceView;
 
     public Tile(boolean isDark) {
         this.isDark = isDark;
@@ -16,5 +16,13 @@ public class Tile extends Rectangle {
         } else {
             setFill(Color.valueOf("#ffcce3"));
         }
+    }
+
+    public PieceView getPieceView() {
+        return pieceView;
+    }
+
+    public void setPieceView(PieceView pieceView) {
+        this.pieceView = pieceView;
     }
 }

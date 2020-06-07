@@ -63,6 +63,10 @@ public abstract class Piece {
         return isDead;
     }
 
+    public static void setAlivePieces(ArrayList<Piece> alivePieces) {
+        Piece.alivePieces = alivePieces;
+    }
+
     public void setX(int x) {
         this.x = x;
     }

@@ -1,11 +1,13 @@
 package View.GameView;
 
 import Controller.Game;
+import Model.Pieces.Piece;
 import View.AccountView.MainView.MainMenu;
 import View.MenuManager;
 
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
@@ -14,7 +16,9 @@ import java.util.ResourceBundle;
 
 public class GameManager extends MenuManager implements Initializable {
     public Label showPlayers;
+    public Label assertionLabel;
     public GridPane chessBoard;
+    public Group pieces = new Group();
     private Game game = Game.getInstance();
     {
         parentMenu = new MainMenu();
@@ -24,13 +28,22 @@ public class GameManager extends MenuManager implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         showPlayers.setText(game.getPlayer1() + " vs " + game.getPlayer2());
         setBoardsNumbersAndLetters();
-        setTiles();
+        constructTilesAndPieces();
+        chessBoard.getChildren().addAll(pieces);
+
     }
 
-    private void setTiles() {
+    private void constructTilesAndPieces() {
         for(int i = 0; i < 8; i++) {
             for(int j = 1; j < 9; j++) {
-                chessBoard.add(new Tile((i + j) % 2 == 0), j, i);
+                Tile tile = new Tile((i + j) % 2 == 0);
+                Piece piece = game.getPiece(8 - i, j);
+                if(piece != null) {
+                    PieceView pieceView = new PieceView(piece);
+                    pieces.getChildren().add(pieceView);
+                    tile.setPieceView(pieceView);
+                }
+                chessBoard.add(tile, j, i);
             }
         }
     }
@@ -60,8 +73,11 @@ public class GameManager extends MenuManager implements Initializable {
     }
 
     public void move() {
+
     }
 
     public void undo() {
     }
+
+    //TODO: WRITE METHODS TO TURN COORDINATES FROM GRID PANE FORMAT TO CONTROLLER AND VICE VERSA
 }

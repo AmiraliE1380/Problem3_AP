@@ -29,6 +29,7 @@ public class Game {
         this.turns = getLimit(turns);
         movingPlayer = Piece.Color.WHITE;
         initializePieces();
+        Piece.setAlivePieces(pieces);
         hasMoved = false;
         undo = new Undo(player1, player2, totalUndo);
     }
@@ -184,5 +185,13 @@ public class Game {
 
     public String getPlayer2() {
         return player2.getUsername();
+    }
+
+    public Piece getPiece(int x, int y) {
+        return Piece.getAlivePiece(x, y);
+    }
+
+    public ArrayList<Piece> getPieces() {
+        return pieces;
     }
 }

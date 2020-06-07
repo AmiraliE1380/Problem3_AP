@@ -26,6 +26,7 @@ public class GameSetupManager extends MenuManager {
         } catch (Exception e) {
             if(!(e instanceof NumberFormatException)) {
                 errorMessage.setText(e.getMessage());
+                e.printStackTrace();
             }
         }
     }
