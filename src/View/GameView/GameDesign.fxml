@@ -10,7 +10,7 @@
     <Button layoutX="66.0" layoutY="467.0" onMouseClicked="#exit" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="exit" />
     <Button layoutX="66.0" layoutY="271.0" onMouseClicked="#move" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="next turn" />
     <Button layoutX="66.0" layoutY="319.0" onMouseClicked="#undo" prefHeight="25.0" prefWidth="159.0" styleClass="redButton" text="undo" />
-    <GridPane layoutX="393.0" layoutY="59.0" prefHeight="450.0" prefWidth="450.0">
+    <GridPane fx:id="chessBoard" layoutX="393.0" layoutY="59.0" prefHeight="450.0" prefWidth="450.0">
       <rowConstraints>
          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" />
          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" />
