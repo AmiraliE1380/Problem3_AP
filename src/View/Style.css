@@ -26,3 +26,8 @@
 .redButton:hover {
     -fx-background-color: linear-gradient(#ff3184, #ff00e5);
 }
+
+.darkTileButton {
+    -fx-background-color: "#ff478e";
+    -fx-fill-width: 50;
+}
