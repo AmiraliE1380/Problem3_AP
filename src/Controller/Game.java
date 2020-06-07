@@ -177,4 +177,12 @@ public class Game {
         selectedPiece.setX(undo.getXOrigin());
         selectedPiece.setY(undo.getYOrigin());
     }
+
+    public String getPlayer1() {
+        return player1.getUsername();
+    }
+
+    public String getPlayer2() {
+        return player2.getUsername();
+    }
 }

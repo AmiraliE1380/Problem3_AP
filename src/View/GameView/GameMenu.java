@@ -13,7 +13,6 @@ public class GameMenu extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("GameDesign.fxml"));
         primaryStage.setTitle("Ebi's chess");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setMaximized(true);
         primaryStage.show();
 
 
